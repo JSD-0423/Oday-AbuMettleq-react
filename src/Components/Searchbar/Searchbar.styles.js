@@ -1,4 +1,4 @@
-import styled from "styled-component";
+import { styled } from "styled-components";
 
 export const SearchBar = styled.div`
   display: flex;

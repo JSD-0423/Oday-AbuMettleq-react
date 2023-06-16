@@ -1,12 +1,10 @@
 import * as StyledSearchbar from "./Searchbar.styles";
-import { IonIcon } from "../IonIcon";
 
-export function SearchBarComponent(props) {
+export function SearchBar(props) {
   return (
     <div className="container">
       <StyledSearchbar.SearchBar role="search">
         <StyledSearchbar.SearchInput>
-          <IonIcon name={props.iconName} class="search-icon"></IonIcon>
           <StyledSearchbar.Input placeholder={props.placeHolder} />
         </StyledSearchbar.SearchInput>
 

@@ -1,4 +1,4 @@
-import styled from "styled-component";
+import { styled } from "styled-components";
 export const StyledNavbar = styled.nav`
   position: relative;
   z-index: 100;
@@ -14,3 +14,7 @@ export const StyledPageTitle = styled.h1`
   font-weight: 400;
 `;
 
+export const StyledButtonContainer = styled.div`
+  display: flex;
+  gap: 0.3rem;
+`;
