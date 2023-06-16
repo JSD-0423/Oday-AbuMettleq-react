@@ -4,7 +4,7 @@ export const SearchBar = styled.div`
   display: flex;
   justify-content: center;
   margin-block: 1.3rem;
-  background-color: var(--bg-default);
+  background-color: #ffffff;
   width: 100%;
   border-radius: 0.65rem;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px -5px;
@@ -21,7 +21,7 @@ export const Input = styled.input`
   font-size: 1rem;
   font-weight: 400;
   background-color: transparent;
-  outline-color: var(--brand-primary);
+  outline-color: #0768ac;
   padding-left: 2.5rem;
   height: 100%;
   border-top-left-radius: 0.65rem;
@@ -36,13 +36,13 @@ export const SelectContainer = styled.div`
 `;
 
 export const SelectWrapper = styled.div`
-  color: var(--body-text);
+  color: #333333;
   width: 100%;
   display: flex;
   justify-content: right;
   flex-direction: column;
   padding-inline: 0.7rem;
-  border-left: solid 1px var(--lines-color);
+  border-left: solid 1px #dddddd;
   padding-block: 0.3rem;
 `;
 
@@ -53,8 +53,8 @@ export const SelectLabel = styled.label`
 `;
 
 export const Select = styled.select`
-  color: var(--body-text);
-  background-color: var(--bg-default);
+  color: #333333;
+  background-color: #ffffff;
   border: none;
   font-size: 0.9rem;
   font-weight: 400;

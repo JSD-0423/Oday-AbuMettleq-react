@@ -5,9 +5,7 @@ export function IconButton({ iconName, iconTitle }) {
   return (
     <StyledIconButton>
       <IonIcon iconName={iconName}></IonIcon>
-      <StyledTextButtonContent class="text-btn-title">
-        {iconTitle}
-      </StyledTextButtonContent>
+      <StyledTextButtonContent>{iconTitle}</StyledTextButtonContent>
     </StyledIconButton>
   );
 }

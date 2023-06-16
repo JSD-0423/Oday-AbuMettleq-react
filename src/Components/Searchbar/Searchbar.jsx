@@ -1,11 +1,21 @@
+import IonIcon from "../Global/IonIcon/IonIcon";
 import * as StyledSearchbar from "./Searchbar.styles";
 
-export function SearchBar(props) {
+export function SearchBar({ searchInputPlaceHolder, searchInputIconName }) {
+
   return (
     <div className="container">
       <StyledSearchbar.SearchBar role="search">
         <StyledSearchbar.SearchInput>
-          <StyledSearchbar.Input placeholder={props.placeHolder} />
+          <IonIcon
+            iconName={searchInputIconName}
+            customStyle={{
+              padding: "0  0 0 0.7rem",
+              color: "#333333",
+              margin: " 0 -1.55rem 0 0",
+            }}
+          ></IonIcon>
+          <StyledSearchbar.Input placeholder={searchInputPlaceHolder} />
         </StyledSearchbar.SearchInput>
 
         <StyledSearchbar.SelectContainer>

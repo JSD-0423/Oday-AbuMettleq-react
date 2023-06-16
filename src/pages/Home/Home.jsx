@@ -1,7 +1,7 @@
 import { Header } from "../../Components/Header/Header";
 import { Results } from "../../Components/Results/Results";
 import { SearchBar } from "../../Components/Searchbar/Searchbar";
-import { Topics } from "../../Components/Topics/Topics";
+import { Topics } from "../../Components/Topics/TopicsContainer/Topics";
 import { Welcome } from "../../Components/Welcome/Welcome";
 import "./Home.css";
 function Home() {
@@ -21,8 +21,11 @@ function Home() {
             "We have a new design that's fresh, modern and easy to use."
           }
         />
-        <SearchBar></SearchBar>
-        <Results></Results>
+        <SearchBar
+          searchInputPlaceHolder={"Search the website..."}
+          searchInputIconName={"search-outline"}
+        ></SearchBar>
+        <Results resultsContent={'"23" Web Topics Found'} />
         <Topics></Topics>
       </main>
     </>
