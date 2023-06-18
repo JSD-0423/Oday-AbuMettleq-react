@@ -1,6 +1,9 @@
 .container {
   padding-inline: 3.6rem;
 }
+.icon{
+  color: red;
+}
 @media (max-width: 625px) {
   .container {
     padding-inline: 1.5rem;

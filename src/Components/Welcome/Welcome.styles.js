@@ -20,6 +20,9 @@ export const StyledWelcomeContent = styled.div`
   background-color: transparent;
   top: 7.4rem;
   padding-inline: 1rem;
+  @media (max-width: 625px) {
+    top: 6.9rem;
+  }
 `;
 export const StyledWelcomeTitle = styled.h2`
   color: #03c180;
@@ -28,6 +31,12 @@ export const StyledWelcomeTitle = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  @media (max-width: 625px) {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 `;
 export const StyledTriangle = styled.div`
   position: relative;
@@ -42,4 +51,10 @@ export const StyledWelcomeSubTitle = styled.h3`
   color: #333333;
   font-weight: 400;
   font-size: 1rem;
+  @media (max-width: 625px) {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 `;

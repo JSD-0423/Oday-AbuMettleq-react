@@ -5,16 +5,17 @@ import {
   StyledButtonContainer,
 } from "./Navbar.styles";
 import React from "react";
+
 export function Navbar({ pageTitle, icons }) {
+  const iconList = icons.map((icon) => (
+    <IconButton ButtonContent={icon.title} iconName={icon.name} />
+  ));
+
   return (
     <StyledNavbar className="container">
       <StyledPageTitle> {pageTitle}</StyledPageTitle>
 
-      <StyledButtonContainer>
-        {icons.map((icon) => (
-          <IconButton iconTitle={icon.title} iconName={icon.name} />
-        ))}
-      </StyledButtonContainer>
+      <StyledButtonContainer>{iconList}</StyledButtonContainer>
     </StyledNavbar>
   );
 }

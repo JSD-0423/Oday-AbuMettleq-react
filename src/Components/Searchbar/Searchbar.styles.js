@@ -8,6 +8,10 @@ export const SearchBar = styled.div`
   width: 100%;
   border-radius: 0.65rem;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px -5px;
+  @media (max-width: 625px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const SearchInput = styled.div`
@@ -28,11 +32,23 @@ export const Input = styled.input`
   border-bottom-left-radius: 0.65rem;
   width: 100%;
   border: none;
+  @media (max-width: 625px) {
+    border-bottom-left-radius: 0;
+    padding-block: 1rem;
+  }
 `;
 
 export const SelectContainer = styled.div`
   flex-grow: 0.45;
   display: flex;
+  @media (max-width: 625px) {
+    flex-grow: 1;
+    > * {
+      &:first-child {
+        border-right: solid 1px #dddddd;
+      }
+    }
+  }
 `;
 
 export const SelectWrapper = styled.div`
@@ -44,6 +60,11 @@ export const SelectWrapper = styled.div`
   padding-inline: 0.7rem;
   border-left: solid 1px #dddddd;
   padding-block: 0.3rem;
+  @media (max-width: 625px) {
+    width: 100%;
+    border-left: 0;
+    border-top: solid 1px #dddddd;
+  }
 `;
 
 export const SelectLabel = styled.label`
@@ -61,5 +82,4 @@ export const Select = styled.select`
   text-align: left;
 `;
 
-export const Option = styled.option`
-`;
+export const Option = styled.option``;

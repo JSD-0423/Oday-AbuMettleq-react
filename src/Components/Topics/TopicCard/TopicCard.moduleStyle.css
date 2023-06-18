@@ -1,0 +1,69 @@
+.grid-item :hover {
+  cursor: pointer;
+}
+
+.topic-img {
+  background-color: white;
+  margin: 0;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  height: 8.5rem;
+  object-fit: cover;
+}
+
+.topic-section {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 9rem;
+}
+
+.titles-container {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-title {
+  width: 100%;
+  color: #333333;
+  font-size: 0.85rem;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sub-title {
+  color: #333333;
+  font-size: 0.95rem;
+  font-weight: 700;
+  height: 2.5rem;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ratingStars {
+  margin: 0;
+  padding: 0;
+  color: #eb9f25;
+}
+
+.author {
+  width: 100%;
+  color: #333333;
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

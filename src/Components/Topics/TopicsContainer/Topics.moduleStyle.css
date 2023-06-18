@@ -1,0 +1,10 @@
+
+.topics-container {
+    width: inherit;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14.96rem, 1fr));
+    justify-content: left;
+    grid-gap: 2rem;
+    margin-block: 2rem;
+  }
+  

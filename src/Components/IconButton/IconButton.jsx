@@ -1,11 +1,11 @@
 import IonIcon from "../Global/IonIcon/IonIcon";
 import { StyledIconButton, StyledTextButtonContent } from "./IconButton.styles";
 
-export function IconButton({ iconName, iconTitle }) {
+export function IconButton({ iconName, ButtonContent, onClickCallBack }) {
   return (
-    <StyledIconButton>
-      <IonIcon iconName={iconName}></IonIcon>
-      <StyledTextButtonContent>{iconTitle}</StyledTextButtonContent>
+    <StyledIconButton onClick={onClickCallBack}>
+      {iconName ? <IonIcon iconName={iconName}></IonIcon> : <></>}
+      <StyledTextButtonContent>{ButtonContent}</StyledTextButtonContent>
     </StyledIconButton>
   );
 }

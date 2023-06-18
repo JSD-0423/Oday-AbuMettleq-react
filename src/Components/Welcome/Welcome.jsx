@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import {
   StyledWelcome,
   StyledGradiant,
@@ -8,6 +9,12 @@ import {
 } from "./Welcome.styles";
 
 export function Welcome({ title, subTitle }) {
+  useEffect(()=>{
+    console.log("OnMount");
+    return ()=>{
+      console.log("on unMount")
+    }
+  },[])
   return (
     <StyledWelcome>
       <StyledGradiant>

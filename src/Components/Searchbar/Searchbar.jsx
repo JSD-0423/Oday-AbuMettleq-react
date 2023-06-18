@@ -1,93 +1,84 @@
 import IonIcon from "../Global/IonIcon/IonIcon";
 import * as StyledSearchbar from "./Searchbar.styles";
 
-export function SearchBar({ searchInputPlaceHolder, searchInputIconName }) {
+export default function SearchBar({
+  searchInputPlaceHolder,
+  searchInputIconName,
+}) {
+  const searchInputCustomStyle = {
+    padding: "0 0 0 0.7rem",
+    color: "#333333",
+    margin: " 0 -1.55rem 0 0",
+  };
 
   return (
     <div className="container">
+
       <StyledSearchbar.SearchBar role="search">
+
         <StyledSearchbar.SearchInput>
+
           <IonIcon
             iconName={searchInputIconName}
-            customStyle={{
-              padding: "0  0 0 0.7rem",
-              color: "#333333",
-              margin: " 0 -1.55rem 0 0",
-            }}
+            customStyle={searchInputCustomStyle}
           ></IonIcon>
+
           <StyledSearchbar.Input placeholder={searchInputPlaceHolder} />
+
         </StyledSearchbar.SearchInput>
 
+
         <StyledSearchbar.SelectContainer>
+
           <StyledSearchbar.SelectWrapper>
-            <StyledSearchbar.SelectLabel htmlFor="select1" role="Select label">
+
+            <StyledSearchbar.SelectLabel htmlFor="sortBy" role="Select label">
               Sort by:
             </StyledSearchbar.SelectLabel>
+
             <StyledSearchbar.Select
-              id="select1"
-              role="select"
+              id="sortBy"
+              role="sorting"
               aria-label="Select option to sort by"
             >
-              <StyledSearchbar.Option
-                value="option1"
-                className="select-option"
-                tabIndex="1"
-              >
-                Default
-              </StyledSearchbar.Option>
-              <StyledSearchbar.Option
-                value="option2"
-                className="select-option"
-                tabIndex="2"
-              >
-                Default
-              </StyledSearchbar.Option>
-              <StyledSearchbar.Option
-                value="option3"
-                className="select-option"
-                tabIndex="3"
-              >
+              <StyledSearchbar.Option value="option3" tabIndex="1">
                 Default
               </StyledSearchbar.Option>
             </StyledSearchbar.Select>
+
           </StyledSearchbar.SelectWrapper>
+
           <StyledSearchbar.SelectWrapper>
+
             <StyledSearchbar.SelectLabel
-              htmlFor="select2"
+              htmlFor="filterBy"
               className="select-label"
             >
               Filter by:
             </StyledSearchbar.SelectLabel>
+
             <StyledSearchbar.Select
-              id="select2"
+              id="filterBy"
               role="select"
               aria-label="Select option to sort by"
             >
+
               <StyledSearchbar.Option
-                value="option1"
+                value="option3"
                 className="select-option"
                 tabIndex="1"
               >
                 Default
               </StyledSearchbar.Option>
-              <StyledSearchbar.Option
-                value="option2"
-                className="select-option"
-                tabIndex="2"
-              >
-                Default
-              </StyledSearchbar.Option>
-              <StyledSearchbar.Option
-                value="option3"
-                className="select-option"
-                tabIndex="3"
-              >
-                Default
-              </StyledSearchbar.Option>
+              
             </StyledSearchbar.Select>
+
           </StyledSearchbar.SelectWrapper>
+
         </StyledSearchbar.SelectContainer>
+
       </StyledSearchbar.SearchBar>
+
     </div>
   );
 }
