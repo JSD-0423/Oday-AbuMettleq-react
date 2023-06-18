@@ -1,148 +1,97 @@
 .details-container {
-    padding-inline: 19%;
-  }
-  
-  .topic-details {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    position: relative;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    background-color: #333333;
-    width: 100%;
-    color: #ededed;
-    gap: 1rem;
-  }
-  
-  .category {
-    color: #03c180;
-    font-size: 1rem;
-    font-weight: 400;
-  }
-  .title {
-    color: #ededed;
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-  .rating {
-    color: #eb9f25;
-  }
-  a{
-    text-decoration: none;
-  }
-  .description {
-    height: 100%;
-    font-size: 1rem;
-    font-weight: 400;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .main-width {
-    max-width: 33rem;
+  padding-inline: 19%;
+}
+
+.rating {
+  color: #eb9f25;
+}
+a {
+  text-decoration: none;
+}
+
+.main-width {
+  max-width: 33rem;
+}
+
+.sub-topics {
+  margin-block: 2rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.sub-topics-content {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+  border: solid 1px #dddddd;
+}
+.sub-topics-content h2 {
+  width: 100%;
+  padding-inline: 1.8rem;
+  color: #333333;
+  padding-block: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: solid 1px #dddddd;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.sub-topics-content h3 {
+  width: 100%;
+  color: #333333;
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.check-mark {
+  font-size: 1.5rem;
+  color: #03c180;
+}
+.sub-topics-content > div {
+  padding-inline: 1.8rem;
+
+  width: 100%;
+  padding-block: 0.95rem;
+  display: flex;
+  justify-content: start;
+  border-bottom: solid 1px #dddddd;
+  align-items: center;
+}
+.sub-topics-content > div:last-child {
+  border: none;
+}
+
+@media (max-width: 625px) {
+  .sub-topics {
+    padding-inline: 1.5rem;
   }
 
-  .sub-topics {
-    margin-block: 2rem;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-  }
   .sub-topics-content {
     width: 100%;
-    background-color: #ffffff;
-    border-radius: 0.3rem;
-    border: solid 1px #dddddd;
   }
-  .sub-topics-content h2 {
-    width: 100%;
-    padding-inline: 1.8rem;
-    color: #333333;
-    padding-block: 1rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    border-bottom: solid 1px #dddddd;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .sub-topics-content h3 {
-    width: 100%;
-    color: #333333;
-    margin-left: 1rem;
-    font-size: 1rem;
-    font-weight: 400;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .check-mark {
-    font-size: 1.5rem;
-    color: #03c180;
-  }
-  .sub-topics-content > div {
-    padding-inline: 1.8rem;
-  
-    width: 100%;
-    padding-block: 0.95rem;
-    display: flex;
-    justify-content: start;
-    border-bottom: solid 1px #dddddd;
-    align-items: center;
-  }
-  .sub-topics-content > div:last-child {
-    border: none;
-  }
-  
-  @media (max-width: 625px) {
-    .topic-details,
-    .sub-topics {
-      padding-inline: 1.5rem;
-    }
-  
-    .sub-topics-content {
-      width: 100%;
-    }
-  
-    .topic-details {
-      flex-direction: column;
-    }
-    .side-bar{
-      width: 100%
-    }
-  }
-  
-  @media (max-width: 978px) and (min-width: 626px) {
-    .details-main {
-      max-width: 100%;
-    }
-    .topic-details {
-      flex-direction: column;
-    }
-  
-    .topic-details,
-    .sub-topics {
-      padding-inline: 3.6rem;
-    }
-  }
-  @media (max-width: 1434px) {
-    .topic-details {
-      flex-direction: column;
-      padding-bottom: 2rem;
-    }
-    .details-container {
-      padding-inline: 5%;
-    }
-    .main-width {
-      max-width: 100%;
-    }
-    .side-bar img {
-      width: 100%;
-    }
-  }
-  
 
-  
+  .side-bar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 978px) and (min-width: 626px) {
+  .sub-topics {
+    padding-inline: 3.6rem;
+  }
+}
+@media (max-width: 1434px) {
+  .details-container {
+    padding-inline: 5%;
+  }
+  .main-width {
+    max-width: 100%;
+  }
+  .side-bar img {
+    width: 100%;
+  }
+}

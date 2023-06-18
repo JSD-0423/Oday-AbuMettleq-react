@@ -1,19 +1,19 @@
-import IonIcon from "../Global/IonIcon/IonIcon";
 import {
   StyledCardImg,
   StyledDetailsCard,
   StyledCardSection,
 } from "./DetailsCard.styles";
-import "./DetailsCard.moduleStyle.css"
+import "./DetailsCard.moduleStyle.css";
+import IonIcon from "../../Global/IonIcon/IonIcon";
 
-export function DetailsCard({ imgUrl, author, mainTitle }) {
+export function DetailsCard({ imgUrl, author, title }) {
   return (
     <StyledDetailsCard>
       <StyledCardImg src={"images/" + imgUrl}></StyledCardImg>
 
       <StyledCardSection>
         <h3 className="cardTitle">
-          <strong>{mainTitle}</strong> by <a href="$">{author}</a>
+          <strong>{title}</strong> by <a href="$">{author}</a>
         </h3>
         <div className="favoritesButtonContainer">
           <h3>Interested in this topic?</h3>

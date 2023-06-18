@@ -1,36 +1,39 @@
 import IonIcon from "../../Global/IonIcon/IonIcon";
 import { StyledTopicCard } from "./TopicCard.styles";
 import "./TopicCard.moduleStyle.css";
+import { Link } from "react-router-dom";
 export default function TopicCard({
-  imgURL,
-  mainTitle,
-  subTitle,
+  id,
+  topic,
+  name,
+  image,
   rating,
-  authorName,
-  onclickCallback
+  category,
+
+  onclickCallback,
 }) {
   return (
-    <a href="#">
+    <Link to={`/details`} style={{ textDecoration: "none" }}>
       <StyledTopicCard
         className="grid-item"
         aria-label="Click this item to navigate to full details"
       >
-        <img src={"images/".concat(imgURL)} alt={subTitle}className="topic-img" />
+        <img src={"images/".concat(image)} alt={topic} className="topic-img" />
         <section className="topic-section">
           <div className="titles-container">
-            <h2 className="main-title">{mainTitle}</h2>
-            <h3 className="sub-title">{subTitle}</h3>
+            <h2 className="category">{category}</h2>
+            <h3 className="topic">{topic}</h3>
           </div>
           <div className="ratingStars">
-            <IonIcon iconName={"star"} ></IonIcon>
+            <IonIcon iconName={"star"}></IonIcon>
             <IonIcon iconName={"star"}></IonIcon>
             <IonIcon iconName={"star"}></IonIcon>
             <IonIcon iconName={"star"}></IonIcon>
             <IonIcon iconName={"star-half-outline"}></IonIcon>
           </div>
-          <h3 class="author">Author: {authorName}</h3>
+          <h3 class="author">Author: {name}</h3>
         </section>
       </StyledTopicCard>
-    </a>
+    </Link>
   );
 }

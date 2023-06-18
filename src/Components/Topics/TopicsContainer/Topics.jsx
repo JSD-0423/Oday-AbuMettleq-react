@@ -1,6 +1,6 @@
 import { IconButton } from "../../IconButton/IconButton";
 import TopicCard from "../TopicCard/TopicCard";
-
+import { Link } from "react-router-dom";
 import {
   StyledTopicsContainer,
   StyledTopicsNotLoading,
@@ -21,11 +21,12 @@ export function Topics({ TopicsArray }) {
   }
   const topicList = TopicsArray.map((topicCard) => (
     <TopicCard
-      imgURL={topicCard.imgURL}
-      mainTitle={topicCard.mainTitle}
-      subTitle={topicCard.subTitle}
+      id={topicCard.id}
+      topic={topicCard.topic}
+      name={topicCard.name}
+      image={topicCard.image}
       rating={topicCard.rating}
-      authorName={topicCard.authorName}
+      category={topicCard.category}
     ></TopicCard>
   ));
 

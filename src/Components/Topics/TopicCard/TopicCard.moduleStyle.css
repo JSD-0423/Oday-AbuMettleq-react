@@ -29,7 +29,7 @@ a {
   text-decoration: none;
 }
 
-.main-title {
+.category {
   width: 100%;
   color: #333333;
   font-size: 0.85rem;
@@ -39,7 +39,7 @@ a {
   white-space: nowrap;
 }
 
-.sub-title {
+.topic {
   color: #333333;
   font-size: 0.95rem;
   font-weight: 700;
