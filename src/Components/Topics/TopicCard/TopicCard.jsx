@@ -7,6 +7,7 @@ export default function TopicCard({
   subTitle,
   rating,
   authorName,
+  onclickCallback
 }) {
   return (
     <a href="#">

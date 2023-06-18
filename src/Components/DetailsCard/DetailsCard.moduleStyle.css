@@ -1,0 +1,47 @@
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.content > a {
+  color: #0768ac;
+}
+.favoritesButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+  font-weight: 400;
+  background-color: #03c180;
+  padding-inline: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(221, 221, 221);
+  border-image: initial;
+}
+.favoritesButton p {
+  margin-block: 0.8rem;
+}
+.favoritesButtonContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  justify-content: space-between;
+  padding: 1.3rem;
+
+  border: solid 1px #dddddd;
+  border-image: initial;
+  gap: 5px;
+}
+.favoritesButtonContainer h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.favoritesButtonContainer h4 {
+  text-align: center;
+  opacity: 0.7;
+  color: rgb(51, 51, 51);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
