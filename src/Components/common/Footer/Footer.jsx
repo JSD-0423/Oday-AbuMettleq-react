@@ -1,4 +1,4 @@
-import IonIcon from "../Global/IonIcon/IonIcon";
+import IonIcon from "../IonIcon/IonIcon";
 import { StyledFooter } from "./StyledFooter";
 
 export function Footer() {

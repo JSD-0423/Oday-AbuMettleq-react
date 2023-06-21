@@ -4,12 +4,14 @@ import {
   StyledCardSection,
 } from "./DetailsCard.styles";
 import "./DetailsCard.moduleStyle.css";
-import IonIcon from "../../Global/IonIcon/IonIcon";
+import IonIcon from "../../common/IonIcon/IonIcon";
+
 
 export function DetailsCard({ imgUrl, author, title }) {
   return (
     <StyledDetailsCard>
-      <StyledCardImg src={"images/" + imgUrl}></StyledCardImg>
+      {console.log(imgUrl)}
+      <StyledCardImg src={"../images/" + imgUrl}></StyledCardImg>
 
       <StyledCardSection>
         <h3 className="cardTitle">
@@ -22,7 +24,7 @@ export function DetailsCard({ imgUrl, author, title }) {
             <IonIcon
               iconName={"heart-outline"}
               customStyle={{
-                "font-size": "2rem",
+                fontSize: "2rem",
               }}
             ></IonIcon>
           </button>

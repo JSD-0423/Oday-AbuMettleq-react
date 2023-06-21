@@ -1,4 +1,4 @@
-import IonIcon from "../Global/IonIcon/IonIcon";
+import IonIcon from "../common/IonIcon/IonIcon";
 import * as StyledSearchbar from "./Searchbar.styles";
 
 export default function SearchBar({

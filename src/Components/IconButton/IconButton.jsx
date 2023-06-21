@@ -1,4 +1,4 @@
-import IonIcon from "../Global/IonIcon/IonIcon";
+import IonIcon from "../common/IonIcon/IonIcon";
 import { StyledIconButton, StyledTextButtonContent } from "./IconButton.styles";
 
 export function IconButton({ iconName, ButtonContent, onClickCallBack }) {

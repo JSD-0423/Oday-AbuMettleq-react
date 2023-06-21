@@ -1,0 +1,16 @@
+.not-found-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   margin: 10rem;
+}
+.notFound-header {
+  font-size: 72px;
+  margin-bottom: 30px;
+}
+
+.notFound-Paragraph {
+  font-size: 24px;
+  margin-bottom: 20px;
+}

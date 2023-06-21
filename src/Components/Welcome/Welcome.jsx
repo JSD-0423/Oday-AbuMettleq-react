@@ -9,12 +9,9 @@ import {
 } from "./Welcome.styles";
 
 export function Welcome({ title, subTitle }) {
-  useEffect(()=>{
-    console.log("OnMount");
-    return ()=>{
-      console.log("on unMount")
-    }
-  },[])
+  useEffect(() => {
+    return () => {};
+  }, []);
   return (
     <StyledWelcome>
       <StyledGradiant>

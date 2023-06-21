@@ -1,6 +1,7 @@
+import { reloadPage } from "../../../utils/ReloadPage";
 import { IconButton } from "../../IconButton/IconButton";
+import { Results } from "../../Results/Results";
 import TopicCard from "../TopicCard/TopicCard";
-import { Link } from "react-router-dom";
 import {
   StyledTopicsContainer,
   StyledTopicsNotLoading,
@@ -12,9 +13,7 @@ export function Topics({ TopicsArray }) {
         <h2>Something went wrong. Web topics failed to load.</h2>
         <IconButton
           ButtonContent={"Reload"}
-          onClickCallBack={() => {
-            window.location.reload();
-          }}
+          onClickCallBack={reloadPage()}
         ></IconButton>
       </StyledTopicsNotLoading>
     );
@@ -31,8 +30,11 @@ export function Topics({ TopicsArray }) {
   ));
 
   return (
-    <StyledTopicsContainer className="container">
-      {topicList}
-    </StyledTopicsContainer>
+    <>
+      <Results resultsContent={'"' + TopicsArray.length + '" Web Topics Found'} />
+      <StyledTopicsContainer className="container">
+        {topicList}
+      </StyledTopicsContainer>
+    </>
   );
 }

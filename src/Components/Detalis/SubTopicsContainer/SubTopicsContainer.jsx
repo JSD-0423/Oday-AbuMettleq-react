@@ -1,4 +1,5 @@
-import IonIcon from "../../Global/IonIcon/IonIcon";
+
+import IonIcon from "../../common/IonIcon/IonIcon";
 import {
   StyledH2,
   StyledH3,

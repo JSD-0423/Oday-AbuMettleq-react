@@ -1,4 +1,4 @@
-import IonIcon from "../../Global/IonIcon/IonIcon";
+import IonIcon from "../../common/IonIcon/IonIcon";
 import { StyledTopicCard } from "./TopicCard.styles";
 import "./TopicCard.moduleStyle.css";
 import { Link } from "react-router-dom";
@@ -9,11 +9,10 @@ export default function TopicCard({
   image,
   rating,
   category,
-
   onclickCallback,
 }) {
   return (
-    <Link to={`/details`} style={{ textDecoration: "none" }}>
+    <Link to={`/details/`+id} style={{ textDecoration: "none" }}>
       <StyledTopicCard
         className="grid-item"
         aria-label="Click this item to navigate to full details"
@@ -31,7 +30,7 @@ export default function TopicCard({
             <IonIcon iconName={"star"}></IonIcon>
             <IonIcon iconName={"star-half-outline"}></IonIcon>
           </div>
-          <h3 class="author">Author: {name}</h3>
+          <h3 className="author">Author: {name}</h3>
         </section>
       </StyledTopicCard>
     </Link>
