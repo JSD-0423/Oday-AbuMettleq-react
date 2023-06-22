@@ -12,7 +12,7 @@ const useTopicsList = () => {
       setLoading(true);
 
       const topicsData = await fetchTopicsList();
-      
+
       if (!topicsData) {
         setError("Something went wrong. Web topics failed to load.");
       } else {

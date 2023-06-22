@@ -9,10 +9,10 @@ export default function TopicCard({
   image,
   rating,
   category,
-  onclickCallback,
 }) {
+  const ratingPercent = rating * 20 + 4;
   return (
-    <Link to={`/details/`+id} style={{ textDecoration: "none" }}>
+    <Link to={`/details/` + id} style={{ textDecoration: "none" }}>
       <StyledTopicCard
         className="grid-item"
         aria-label="Click this item to navigate to full details"
@@ -23,13 +23,30 @@ export default function TopicCard({
             <h2 className="category">{category}</h2>
             <h3 className="topic">{topic}</h3>
           </div>
-          <div className="ratingStars">
-            <IonIcon iconName={"star"}></IonIcon>
-            <IonIcon iconName={"star"}></IonIcon>
-            <IonIcon iconName={"star"}></IonIcon>
-            <IonIcon iconName={"star"}></IonIcon>
-            <IonIcon iconName={"star-half-outline"}></IonIcon>
+
+          <div className="starsContainer">
+            <div
+              className="clipped-stars"
+              style={{
+                clipPath: `polygon(0 0, ${ratingPercent}% 0, ${ratingPercent}% 100%, 0% 100%)`,
+              }}
+            >
+              <IonIcon iconName={"star"}></IonIcon>
+              <IonIcon iconName={"star"}></IonIcon>
+              <IonIcon iconName={"star"}></IonIcon>
+              <IonIcon iconName={"star"}></IonIcon>
+              <IonIcon iconName={"star"}></IonIcon>
+            </div>
+
+            <div className="fixed-stars">
+              <IonIcon iconName={"star-outline"}></IonIcon>
+              <IonIcon iconName={"star-outline"}></IonIcon>
+              <IonIcon iconName={"star-outline"}></IonIcon>
+              <IonIcon iconName={"star-outline"}></IonIcon>
+              <IonIcon iconName={"star-outline"}></IonIcon>
+            </div>
           </div>
+
           <h3 className="author">Author: {name}</h3>
         </section>
       </StyledTopicCard>

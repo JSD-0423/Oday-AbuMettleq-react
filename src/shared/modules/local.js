@@ -1,22 +1,18 @@
-const getFavorites = () => {
-  let favorites = localStorage.getItem("favorites");
-  if (!favorites) return [];
-  favorites = JSON.parse(favorites);
-  return favorites;
-};
-
-const addFavorite = async (topicId) => {
-  const isExist = checkExists(topicId);
-  let favorites = getFavorites();
-  if (isExist) {
-    favorites = favorites.filter((id) => id != topicId);
-  } else {
-    favorites.push(topicId);
+export const setItemToLocalStorage = (key, value) => {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    return false;
   }
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-  console.log("Added")
 };
 
-const checkExists = (topicId) => !!getFavorites().find((id) => id == topicId);
-
-export { getFavorites, addFavorite, checkExists };
+export const getLocalStorageItem = (key) => {
+  try {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : null;
+  } catch (error) {
+    // Handle error (e.g., storage is disabled or inaccessible)
+    console.error("Error while getting item from local storage:", error);
+    return null;
+  }
+};

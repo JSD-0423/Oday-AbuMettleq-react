@@ -11,6 +11,7 @@ import {
   Route,
 } from "react-router-dom";
 import NotFound from "./pages/404/NotFound";
+import { ThemeProvider } from "./context/ThemeContext";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
@@ -20,25 +21,13 @@ const router = createBrowserRouter(
       <Route path="*" element={<NotFound />} />
     </Route>
   )
-  // [
-  //   {
-  //     path: "/",
-  //     element: <RootLayout />,
-  //     children: [
-  //       {
-  //         path: "/",
-  //         element: <Home />,
-  //       },
-  //       {
-  //         path: "/details/:id",
-  //         element: <Details />,
-  //       },
-  //     ],
-  //   },
-  // ]
 );
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />;
+    </ThemeProvider>
+  );
 }
 
 export default App;
