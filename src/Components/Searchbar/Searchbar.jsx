@@ -1,6 +1,6 @@
 import IonIcon from "../common/IonIcon/IonIcon";
 import * as StyledSearchbar from "./Searchbar.styles";
-import { filterOptions } from "./SearchbarFunctionality";
+
 export default function SearchBar({
   searchValue,
   setSearchValue,
@@ -8,6 +8,8 @@ export default function SearchBar({
   searchInputIconName,
   topics,
 }) {
+  const filterOptions = [...new Set(topics.map((item) => item.category))];
+  console.log("FilterOpitions:" + filterOptions);
   const searchInputCustomStyle = {
     padding: "0 0 0 0.7rem",
     color: "#333333",
@@ -26,7 +28,7 @@ export default function SearchBar({
           <StyledSearchbar.Input
             placeholder={searchInputPlaceHolder}
             value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
+            onChange={ e => setSearchValue(e.target.value)}
           />
         </StyledSearchbar.SearchInput>
 
@@ -60,7 +62,10 @@ export default function SearchBar({
               aria-label="Select option to sort by"
             >
               <SelectOption element={"Default"}></SelectOption>
-              {setTimeout(filterOptions(topics),5000)}
+
+              {filterOptions.map((e) => (
+                <SelectOption element={e}></SelectOption>
+              ))}
             </StyledSearchbar.Select>
           </StyledSearchbar.SelectWrapper>
         </StyledSearchbar.SelectContainer>

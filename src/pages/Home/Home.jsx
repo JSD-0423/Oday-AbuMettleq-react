@@ -7,11 +7,9 @@ import useTopicsList from "../../hooks/useTopicsList";
 
 import "./Home.css";
 import { useSearchTopics } from "../../hooks/useTopicSearch";
+import useTopics from "../../hooks/useTopics";
 function Home() {
-  const { topics, loading, error } = useTopicsList();
-  const { searchValue, setSearchValue } = useState();
-  const { searchTopics, SearchLoading, SearchError } =
-    useSearchTopics(searchValue);
+  const { topics, searchedTopics, loading, error,setSearchValue,searchValue } = useTopics();
 
   if (loading) {
     return (
