@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
 export const StyledHeader = styled.header`
-  background-color: #ffffff;
+  background-color: var(--bg-default);
   height: 4.5rem;
 `;

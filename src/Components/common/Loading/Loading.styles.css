@@ -23,10 +23,10 @@
   width: 64px;
   height: 64px;
   margin: 8px;
-  border: 8px solid #0768ac;
+  border: 8px solid;
   border-radius: 50%;
   animation: loading-Circle 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #0768ac transparent transparent transparent;
+  border-color: var(--brand-primary) transparent transparent transparent;
 }
 
 .loading-Circle div:nth-child(1) {

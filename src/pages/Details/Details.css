@@ -1,17 +1,23 @@
 .details-container {
-  padding-inline: 19%;
+    padding-inline: 19%;
 }
 
 .rating {
-  color: #eb9f25;
+    color: #eb9f25;
 }
 
 
 .main-width {
-  max-width: 33rem;
+    max-width: 33rem;
+}
+
+@media (max-width: 1435px) {
+    .main-width {
+        max-width: 100%;
+    }
 }
 
 .check-mark {
-  font-size: 1.5rem;
-  color: #03c180;
+    font-size: 1.5rem;
+    color: #03c180;
 }

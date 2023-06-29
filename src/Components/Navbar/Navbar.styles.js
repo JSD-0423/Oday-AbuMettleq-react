@@ -10,7 +10,7 @@ export const StyledNavbar = styled.nav`
 `;
 export const StyledPageTitle = styled.h1`
   font-size: 1rem;
-  color: #0768ac;
+  color: var(--brand-primary);
   font-weight: 400;
 `;
 

@@ -10,12 +10,11 @@ import IonIcon from "../../common/IonIcon/IonIcon";
 export function DetailsCard({ imgUrl, author, title }) {
   return (
     <StyledDetailsCard>
-      {console.log(imgUrl)}
       <StyledCardImg src={"../images/" + imgUrl}></StyledCardImg>
 
       <StyledCardSection>
         <h3 className="cardTitle">
-          <strong>{title}</strong> by <a href="$">{author}</a>
+          <strong>{title}</strong> by <a href="#">{author}</a>
         </h3>
         <div className="favoritesButtonContainer">
           <h3>Interested in this topic?</h3>

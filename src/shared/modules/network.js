@@ -3,10 +3,11 @@ let sendRequest = async (url, method) => {
     const response = await fetch(url, {
       method: method,
     });
-    console.log(response);
+
     return response.json();
   } catch (error) {
-    return null;
+    return null; 
   }
 };
+
 export { sendRequest };

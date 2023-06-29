@@ -1,57 +1,78 @@
-import { useState } from "react";
+import React, {useState, useEffect} from "react";
 import SearchBar from "../../Components/Searchbar/Searchbar";
-import { Topics } from "../../Components/Topics/TopicsContainer/Topics";
-import { ErrorContainer } from "../../Components/common/Error/Error";
-import { LoadingContainer } from "../../Components/common/Loading/Loading";
-import useTopicsList from "../../hooks/useTopicsList";
+import {Topics} from "../../Components/Topics/TopicsContainer/Topics";
+import {fetchTopicsList, searchTopics} from "../../services/api";
+import {LoadingContainer} from "../../Components/common/Loading/Loading";
+import {ErrorContainer} from "../../Components/common/Error/Error";
+import {useDebounce} from "../../hooks/useDebounce";
 
 import "./Home.css";
-import { useSearchTopics } from "../../hooks/useTopicSearch";
-import useTopics from "../../hooks/useTopics";
+
 function Home() {
-  const { topics, searchedTopics, loading, error,setSearchValue,searchValue } = useTopics();
+    const [topics, setTopics] = useState([]);
+    const [searchedTopics, setSearchedTopics] = useState([]);
+    const [displayedTopics, setDisplayedTopics] = useState([]);
+    const [searchInput, setSearchInput] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const debouncedSearchInput = useDebounce(searchInput, 300);
+    const filterOptions = [...new Set(topics.map((item) => item.category))];
 
-  if (loading) {
-    return (
-      <>
-        <SearchBar
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-          searchInputPlaceHolder={"Search the website..."}
-          searchInputIconName={"search-outline"}
-          topics={topics}
-        ></SearchBar>
-        ;
-        <LoadingContainer />
-      </>
-    );
-  }
-  if (error) {
-    return (
-      <>
-        <SearchBar
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-          searchInputPlaceHolder={"Search the website..."}
-          searchInputIconName={"search-outline"}
-          topics={topics}
-        ></SearchBar>
-        <ErrorContainer error={error} />
-      </>
-    );
-  }
-  return (
-    <>
-      <SearchBar
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-        searchInputPlaceHolder={"Search the website..."}
-        searchInputIconName={"search-outline"}
-        topics={topics}
-      ></SearchBar>
+    useEffect(() => {
+        const fetchSearchTopics = async () => {
+            setLoading(true);
+            const topicsData = await searchTopics(debouncedSearchInput);
+            setSearchedTopics(topicsData);
+            setDisplayedTopics(searchedTopics);
+            setLoading(false);
+        };
 
-      <Topics TopicsArray={topics}></Topics>
-    </>
-  );
+        if (debouncedSearchInput !== "") {
+            fetchSearchTopics();
+        } else {
+            setDisplayedTopics(topics);
+        }
+    }, [debouncedSearchInput, topics]);
+
+    useEffect(() => {
+        const fetchTopics = async () => {
+            setLoading(true);
+            const topicsData = await fetchTopicsList();
+
+            if (!topicsData) {
+                setError("Something went wrong. Web topics failed to load.");
+            } else {
+                setTopics(topicsData);
+                setDisplayedTopics(topics);
+            }
+
+            setLoading(false);
+        };
+
+        fetchTopics();
+    }, []);
+
+    const searchTopic = (searchValue) => {
+        setSearchInput(searchValue);
+    };
+
+    return (
+        <>
+            <SearchBar
+                onChange={searchTopic}
+                searchInputPlaceHolder={"Search the website..."}
+                searchInputIconName={"search-outline"}
+                filterOptions={filterOptions}
+            />
+            {error ? (
+                <ErrorContainer error={error}/>
+            ) : loading ? (
+                <LoadingContainer/>
+            ) : (
+                <Topics Topics={displayedTopics}/>
+            )}
+        </>
+    );
 }
+
 export default Home;

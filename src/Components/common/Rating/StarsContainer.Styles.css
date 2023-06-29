@@ -1,0 +1,14 @@
+.starsContainer {
+    color: var( --star-color);
+    position: relative;
+    margin-bottom: 0.4rem;
+}
+.clipped-stars {
+    position: absolute;
+}
+.clipped-stars,
+.fixed-stars {
+    width: fit-content;
+    top: 0;
+    left: 0;
+}

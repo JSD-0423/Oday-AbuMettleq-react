@@ -28,24 +28,10 @@
 a {
   text-decoration: none;
 }
-.starsContainer {
-  color: #eb9f25;
-  position: relative;
-  margin-bottom: 0.4rem;
-}
-.clipped-stars {
-  position: absolute;
-}
-.clipped-stars,
-.fixed-stars {
-  width: fit-content;
-  top: 0;
-  left: 0;
-}
 
 .category {
   width: 100%;
-  color: #333333;
+  color: var(--body-text);
   font-size: 0.85rem;
   font-weight: 400;
   overflow: hidden;
@@ -54,7 +40,7 @@ a {
 }
 
 .topic {
-  color: #333333;
+  color: var(--body-text);
   font-size: 0.95rem;
   font-weight: 700;
   height: 2.5rem;
@@ -65,15 +51,11 @@ a {
   overflow: hidden;
 }
 
-.ratingStars {
-  margin: 0;
-  padding: 0;
-  color: #eb9f25;
-}
+
 
 .author {
   width: 100%;
-  color: #333333;
+  color: var(--body-text);
   font-size: 0.8rem;
   font-weight: 400;
   opacity: 0.8;

@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 export const StyledIconButton = styled.button`
-  color: #333333;
+  color: var(--body-text);
   height: 2rem;
   justify-content: center;
   padding-inline: 0.7rem;
   background: none;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: var(--bg-default);
+  border: 1px solid var(--lines-color);
   border-radius: 0.3rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   display: inline-flex;
@@ -15,7 +15,7 @@ export const StyledIconButton = styled.button`
   font-size: 0.9rem;
   font-weight: 400;
   &:hover {
-    background-color: #0768ac;
+    background-color: var(--brand-primary);
     transform: translateY(-1px);
   }
   &:active {

@@ -1,55 +1,30 @@
 import IonIcon from "../../common/IonIcon/IonIcon";
-import { StyledTopicCard } from "./TopicCard.styles";
+import {StyledTopicCard} from "./TopicCard.styles";
 import "./TopicCard.moduleStyle.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import {StarsContainer} from "../../common/Rating/StarsContainer";
+
 export default function TopicCard({
-  id,
-  topic,
-  name,
-  image,
-  rating,
-  category,
-}) {
-  const ratingPercent = rating * 20 + 4;
-  return (
-    <Link to={`/details/` + id} style={{ textDecoration: "none" }}>
-      <StyledTopicCard
-        className="grid-item"
-        aria-label="Click this item to navigate to full details"
-      >
-        <img src={"images/".concat(image)} alt={topic} className="topic-img" />
-        <section className="topic-section">
-          <div className="titles-container">
-            <h2 className="category">{category}</h2>
-            <h3 className="topic">{topic}</h3>
-          </div>
+                                      id, topic, name, image, rating, category,
+                                  }) {
 
-          <div className="starsContainer">
-            <div
-              className="clipped-stars"
-              style={{
-                clipPath: `polygon(0 0, ${ratingPercent}% 0, ${ratingPercent}% 100%, 0% 100%)`,
-              }}
-            >
-              <IonIcon iconName={"star"}></IonIcon>
-              <IonIcon iconName={"star"}></IonIcon>
-              <IonIcon iconName={"star"}></IonIcon>
-              <IonIcon iconName={"star"}></IonIcon>
-              <IonIcon iconName={"star"}></IonIcon>
-            </div>
 
-            <div className="fixed-stars">
-              <IonIcon iconName={"star-outline"}></IonIcon>
-              <IonIcon iconName={"star-outline"}></IonIcon>
-              <IonIcon iconName={"star-outline"}></IonIcon>
-              <IonIcon iconName={"star-outline"}></IonIcon>
-              <IonIcon iconName={"star-outline"}></IonIcon>
-            </div>
-          </div>
+    return (<Link to={`/details/` + id} key={id}>
+        <StyledTopicCard
+            className="grid-item"
+            aria-label="Click this item to navigate to full details"
+        >
+            <img src={"images/".concat(image)} alt={topic} className="topic-img"/>
+            <section className="topic-section">
+                <div className="titles-container">
+                    <h2 className="category">{category}</h2>
+                    <h3 className="topic">{topic}</h3>
+                </div>
 
-          <h3 className="author">Author: {name}</h3>
-        </section>
-      </StyledTopicCard>
-    </Link>
-  );
+                <StarsContainer rating={rating}/>
+
+                <h3 className="author">Author: {name}</h3>
+            </section>
+        </StyledTopicCard>
+    </Link>);
 }

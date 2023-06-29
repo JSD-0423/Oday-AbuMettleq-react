@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 export const StyledWelcome = styled.div`
   text-align: left;
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--bg-default);
   height: 7rem;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const StyledWelcomeContent = styled.div`
   }
 `;
 export const StyledWelcomeTitle = styled.h2`
-  color: #03c180;
+  color: var(--brand-secondary);
   font-weight: 700;
   font-size: 1.4rem;
   overflow: hidden;
@@ -48,7 +48,7 @@ export const StyledTriangle = styled.div`
 `;
 
 export const StyledWelcomeSubTitle = styled.h3`
-  color: #333333;
+  color: var(--body-text);
   font-weight: 400;
   font-size: 1rem;
   @media (max-width: 625px) {
