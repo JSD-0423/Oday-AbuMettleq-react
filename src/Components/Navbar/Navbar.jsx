@@ -1,5 +1,5 @@
 import {ThemeProvider} from "../../context/ThemeContext";
-import {useThemeContext, useThemeUpdate} from "../../hooks/useThemeContext";
+import {useThemeUpdate} from "../../hooks/useThemeContext";
 
 import {IconButton} from "../IconButton/IconButton";
 import {
@@ -11,7 +11,6 @@ import {
 import {Link} from "react-router-dom";
 
 export function Navbar({pageTitle}) {
-    const darkTheme = useThemeContext();
     const toggleTheme = useThemeUpdate();
 
 

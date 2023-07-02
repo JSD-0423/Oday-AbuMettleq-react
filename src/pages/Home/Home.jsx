@@ -17,13 +17,16 @@ function Home() {
     const [error, setError] = useState(null);
     const debouncedSearchInput = useDebounce(searchInput, 300);
     const filterOptions = [...new Set(topics.map((item) => item.category))];
+    const [sort, setSort] = useState("Default");
+    const [filter, setFilter] = useState("Default");
 
     useEffect(() => {
+
         const fetchSearchTopics = async () => {
             setLoading(true);
             const topicsData = await searchTopics(debouncedSearchInput);
             setSearchedTopics(topicsData);
-            setDisplayedTopics(searchedTopics);
+            setDisplayedTopics(topicsData);
             setLoading(false);
         };
 
@@ -35,6 +38,35 @@ function Home() {
     }, [debouncedSearchInput, topics]);
 
     useEffect(() => {
+        const applyFilters = () => {
+            let filteredTopics = [...displayedTopics];
+
+            if (filter !== "Default") {
+                filteredTopics = filteredTopics.filter((topic) => topic.category === filter);
+
+            } else {
+                filteredTopics = [...displayedTopics]
+            }
+
+            switch (sort) {
+                case "Default":
+                    filteredTopics = [...topics]
+                    break;
+                case "Author":
+                    filteredTopics = filteredTopics.slice().sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case "Topics":
+                    filteredTopics = filteredTopics.slice().sort((a, b) => a.topic.localeCompare(b.topic));
+                    break;
+                default:
+                    break;
+            }
+            setDisplayedTopics(filteredTopics)
+        };
+        applyFilters();
+    }, [searchedTopics, sort, filter]);
+
+    useEffect(() => {
         const fetchTopics = async () => {
             setLoading(true);
             const topicsData = await fetchTopicsList();
@@ -43,7 +75,7 @@ function Home() {
                 setError("Something went wrong. Web topics failed to load.");
             } else {
                 setTopics(topicsData);
-                setDisplayedTopics(topics);
+                setDisplayedTopics(topicsData);
             }
 
             setLoading(false);
@@ -63,6 +95,8 @@ function Home() {
                 searchInputPlaceHolder={"Search the website..."}
                 searchInputIconName={"search-outline"}
                 filterOptions={filterOptions}
+                setSort={setSort}
+                setFilter={setFilter}
             />
             {error ? (
                 <ErrorContainer error={error}/>

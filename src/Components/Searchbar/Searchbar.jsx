@@ -6,7 +6,8 @@ export default function SearchBar({
                                       searchInputPlaceHolder,
                                       searchInputIconName,
                                       filterOptions,
-
+                                      setFilter,
+                                      setSort,
                                   }) {
 
 
@@ -14,6 +15,13 @@ export default function SearchBar({
         padding: "0 0 0 0.7rem", color: "#333333", margin: " 0 -1.55rem 0 0",
     };
 
+    const handleSortChange = (event) => {
+        setSort(event.target.value);
+    };
+
+    const handleFilterChange = (event) => {
+        setFilter(event.target.value);
+    };
 
     return (<div className="container">
         <StyledSearchbar.SearchBar role="search">
@@ -39,6 +47,7 @@ export default function SearchBar({
                         id="sortBy"
                         role="sorting"
                         aria-label="Select option to sort by"
+                        onChange={handleSortChange}
                     >
                         <SelectOption element={"Default"}></SelectOption>
                         <SelectOption element={"Author"}/>
@@ -58,6 +67,7 @@ export default function SearchBar({
                         id="filterBy"
                         role="select"
                         aria-label="Select option to sort by"
+                        onChange={handleFilterChange}
                     >
                         <SelectOption element={"Default"}></SelectOption>
 
