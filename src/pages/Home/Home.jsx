@@ -43,25 +43,23 @@ function Home() {
 
             if (filter !== "Default") {
                 filteredTopics = filteredTopics.filter((topic) => topic.category === filter);
-
             } else {
-                filteredTopics = [...displayedTopics]
+                setDisplayedTopics(topics)
             }
 
             switch (sort) {
                 case "Default":
-                    filteredTopics = [...topics]
+                    setDisplayedTopics(topics);
                     break;
                 case "Author":
-                    filteredTopics = filteredTopics.slice().sort((a, b) => a.name.localeCompare(b.name));
+                    setDisplayedTopics(filteredTopics.slice().sort((a, b) => a.name.localeCompare(b.name)));
                     break;
                 case "Topics":
-                    filteredTopics = filteredTopics.slice().sort((a, b) => a.topic.localeCompare(b.topic));
+                    setDisplayedTopics(filteredTopics.slice().sort((a, b) => a.topic.localeCompare(b.topic)));
                     break;
                 default:
                     break;
             }
-            setDisplayedTopics(filteredTopics)
         };
         applyFilters();
     }, [searchedTopics, sort, filter]);

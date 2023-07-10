@@ -1,5 +1,6 @@
 let sendRequest = async (url, method) => {
   try {
+    
     const response = await fetch(url, {
       method: method,
     });
